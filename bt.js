@@ -164,7 +164,7 @@ noble.on('discover', co.wrap(function*(peripheral) {
         devices[peripheral.address].model = {};
         devices[peripheral.address].charsModel = {};
       }
-
+      noble.stopScanning();
       connect(peripheral, yield loadDeviceDefinition(peripheral.address), ad.localName);
     }
     catch (ex) {
